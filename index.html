@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personalized Meal Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Personalized Meal Planner</h1>
+        </header>
+        
+        <section id="user-input-form">
+            <h2>Your Meal Preferences</h2>
+            <form id="mealPlannerForm">
+                <div>
+                    <label for="userName">Name (Optional):</label>
+                    <input type="text" id="userName" placeholder="Your Name">
+                </div>
+
+                <div>
+                    <label>Dietary Preferences:</label>
+                    <select multiple id="dietPreferences">
+                        <option value="vegan">Vegan</option>
+                        <option value="keto">Keto</option>
+                        <option value="low-carb">Low Carb</option>
+                        <option value="high-protein">High Protein</option>
+                        <option value="gluten-free">Gluten Free</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="caloricGoal">Daily Caloric Intake Goal:</label>
+                    <input type="number" id="caloricGoal" min="1000" max="5000" placeholder="2000">
+                </div>
+
+                <div>
+                    <label>Ingredients to Include:</label>
+                    <input type="text" id="includeIngredients" placeholder="Chicken, Salmon">
+                    <div id="includedIngredients" class="ingredient-container"></div>
+                </div>
+
+                <div>
+                    <label>Ingredients to Exclude:</label>
+                    <input type="text" id="excludeIngredients" placeholder="Peanuts, Dairy">
+                    <div id="excludedIngredients" class="ingredient-container"></div>
+                </div>
+
+                <div>
+                    <label>Meals per Day:</label>
+                    <select id="mealsPerDay">
+                        <option value="3">3 Meals</option>
+                        <option value="5">3 Meals + 2 Snacks</option>
+                    </select>
+                </div>
+
+                <button type="submit">Generate Meal Plan</button>
+            </form>
+        </section>
+
+        <section id="meal-plan-results">
+            <div id="weeklyMealPlan"></div>
+            <div id="nutritionalBreakdown"></div>
+            <div id="shoppingList"></div>
+        </section>
+
+        <section id="weekly-meal-plan">
+            <h2>Weekly Meal Plan</h2>
+            <div class="day-dropdown-container">
+                <label for="monday-meal">Monday:</label>
+                <select id="monday-meal"></select>
+            </div>
+            
+        </section>
+
+        <section id="recipe-viewer">
+            <h2>Recipe Details</h2>
+            <div id="recipeDetails"></div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
